@@ -1,12 +1,10 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
 async function getImage() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/v1/files/`, {
     cache: 'no-store',
   });
   const { data } = await res.json();
-  // console.log(data);
   return data;
 }
 
@@ -58,76 +56,42 @@ export default async function Page({ params }) {
                 <thead>
                   <tr>
                     <th></th>
-                    <td>Pet Type</td>
-                    <td>Pet Image</td>
+                    <td>Service Branch</td>
                     <td>Pet Name</td>
-                    <td>Pet Owner</td>
-                    <td>Package</td>
+                    <td>Number of pet</td>
+                    <td>Pet type</td>
                     <td>Check In</td>
                     <td>Check Out</td>
+                    <td>Package</td>
                     <td>Special Treatment</td>
-                    <td>Review</td>
+                    <td>Price</td>
                     <td>Status</td>
-                    <td>Action</td>
+                    <td>Comment</td>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th>1</th>
-                    <td>Pet Type</td>
-                    <td>
-                      <div className='avatar'>
-                        <div className='w-24 mask mask-squircle'>
-                          <Image src='/images/photo.jpg' alt='' width={50} height={50} />
-                        </div>
-                      </div>
-                    </td>
-                    <td>Pet Name</td>
-                    <td>Pet Owner</td>
-                    <td>Package</td>
-                    <td>Check In</td>
-                    <td>Check Out</td>
-                    <td>Special Treatment</td>
-                    <td>Review</td>
-                    <td>
-                      <select className='select select-bordered w-full max-w-xs'>
-                        <option disabled selected>
-                          Order Status
-                        </option>
-                        <option>On Process</option>
-                        <option>On Going</option>
-                        <option>Complete</option>
-                        <option>Cancel</option>
-                      </select>
-                    </td>
-                    <td>
-                      <Link href={''} className='btn btn-primary'>
-                        Edit
-                      </Link>
-                      <Link href={''} className='btn btn-secondary'>
-                        Delete
-                      </Link>
-                    </td>
-                  </tr>
+                  {dataOrder.map((order) => {
+                    return (
+                      <>
+                        <tr key={order.id}>
+                          <th></th>
+                          <td>{order.branch_id}</td>
+                          <td>{order.pet_name}</td>
+                          <td>{order.num_pet}</td>
+                          <td>{order.pet_type}</td>
+                          <td>{order.start_date}</td>
+                          <td>{order.end_date}</td>
+                          <td>{order.package}</td>
+                          <td>{order.special_treatment}</td>
+                          <td>{order.price}</td>
+                          <td>{order.status}</td>
+                          <td>{order.comment}</td>
+                        </tr>
+                      </>
+                    );
+                  })}
                 </tbody>
-                <tfoot>
-                  <tr>
-                    <th></th>
-                    <td>Pet Type</td>
-                    <td>Pet Image</td>
-                    <td>Pet Name</td>
-                    <td>Pet Owner</td>
-                    <td>Package</td>
-                    <td>Check In</td>
-                    <td>Check Out</td>
-                    <td>Special Treatment</td>
-                    <td>Review</td>
-                    <td>Status</td>
-                    <td>Action</td>
-                    <th></th>
-                  </tr>
-                </tfoot>
               </table>
             </div>
           </div>
