@@ -74,6 +74,7 @@ export default async function Page() {
             {orders.map((order) => {
               // const user = users.filter((item) => item.id == order.user_id);
               // console.log('ini user : ', user);
+
               return (
                 <>
                   <tr key={order.id}>
@@ -83,7 +84,7 @@ export default async function Page() {
                     <td>{order.pet_name}</td>
                     <td>{order.num_pet}</td>
                     <td>{order.pet_type}</td>
-                    <td>{order.start_date}</td>
+                    <td>{order.end_date}</td>
                     <td>{order.end_date}</td>
                     <td>{order.package}</td>
                     <td>{order.special_treatment}</td>
@@ -102,10 +103,10 @@ export default async function Page() {
                       </select>
                     </td> */}
                     <td className='flex flex-row gap-2'>
-                      <label htmlFor='edit-user' className='btn btn-primary mx-1'>
+                      <label htmlFor={'edit-order' + order.id} className='btn btn-primary mx-1'>
                         Edit
                       </label>
-                      <ModalOrder modalId={'edit-order' + order.id} isEdit={true} />
+                      <ModalOrder modalId={'edit-order' + order.id} isEdit={true} id={order.id} />
                       <DeleteButton id={order.id} type={'order'} />
                     </td>
                   </tr>

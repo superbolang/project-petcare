@@ -7,7 +7,7 @@ async function getData() {
     cache: 'no-store',
   });
   const { _, data } = await res.json();
-  console.log(data);
+  // console.log(data);
 
   return data;
 }

@@ -54,9 +54,9 @@ export default function Reservation({ isReservation, userid, branchid }) {
     },
   ];
 
-  const handleValueChangeOnDatePicker = (newValue) => {
-    setValueDatePicker(newValue);
-  };
+  // const handleValueChangeOnDatePicker = (newValue) => {
+  //   setValueDatePicker(newValue);
+  // };
 
   return (
     <div className={'mt-9 ' + (isReservation ? 'visible' : 'hidden')}>
@@ -95,7 +95,7 @@ export default function Reservation({ isReservation, userid, branchid }) {
             <option disabled>Pick one</option>
             {reservationPackages.map(function (pack) {
               return (
-                <option key={pack.name} value={pack.name}>
+                <option key={pack.name} value={pack.name + ' : ' + pack.price}>
                   {pack.name} | IDR {pack.price} | {pack.includeService.join(', ')}
                 </option>
               );
