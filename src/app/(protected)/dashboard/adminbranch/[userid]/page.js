@@ -19,7 +19,7 @@ export default async function Page({ params }) {
   const data = await getBranch();
   const { userid } = params;
   const config = {
-    cities: ['Jakarta', 'Surabaya', 'Semarang'],
+    cities: ['Jakarta', 'Surabaya', 'Semarang','Jogjakarta'],
     pets: ['Dog, Cat, Rabbit', 'Dog, Rabbit', 'Dog, Cat', 'Rabbit, Cat', 'Dog', 'Cat', 'Rabbit'],
   };
 

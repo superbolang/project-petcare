@@ -25,7 +25,7 @@ export async function POST(req) {
     },
   });
 
-  console.log(file);
+  // console.log(file);
 
   return Response.json({ message: 'Good!' });
 }

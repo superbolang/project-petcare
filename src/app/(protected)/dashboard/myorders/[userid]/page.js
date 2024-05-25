@@ -75,8 +75,8 @@ export default async function Page({ params }) {
                     <label htmlFor='edit-user' className='btn btn-primary mx-1'>
                       Edit
                     </label>
-                    <ModalOrder modalId={'edit-order'} isEdit={true} />
-                    <DeleteButton id={order.id} type={'order'} />
+                    <ModalOrder modalId={'edit-order' + order.id} isEdit={true} id={order.id} />
+                    <DeleteButton id={order.id} type={'order'} userid={userid} />
                   </li>
                 </ul>
               </div>

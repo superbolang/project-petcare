@@ -22,7 +22,7 @@ export const DeleteButton = ({ id, type, userid }) => {
       await fetch(`/api/v1/order/${id}`, {
         method: 'DELETE',
       });
-      router.push(`/dashboard`);
+      userid ? router.push(`/dashboard/myorders/${userid}`) : router.push('/dashboard/orders');
     }
     router.refresh();
   }

@@ -17,7 +17,7 @@ export default async function Layout({ children }) {
     jwt.verify(token.value, 'thisissecretkey');
 
     const decodeData = jwt.decode(token.value);
-    console.log(decodeData);
+    // console.log(decodeData);
     return (
       <>
         <Navbar>

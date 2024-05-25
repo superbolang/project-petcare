@@ -17,7 +17,7 @@ async function getImage() {
   return data;
 }
 
-export default async function ModalUser({ isEdit, modalId, id }) {
+export default async function ModalUser({ modalId, isEdit, id }) {
   // const data = await getData();
   const images = await getImage();
 
