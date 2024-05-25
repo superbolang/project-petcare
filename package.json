@@ -1,0 +1,32 @@
+{
+  "name": "19-mediahandling",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.567.0",
+    "@prisma/client": "^5.13.0",
+    "bcrypt": "^5.1.1",
+    "js-cookie": "^3.0.5",
+    "jsonwebtoken": "^9.0.2",
+    "nanoid": "^5.0.7",
+    "next": "14.2.3",
+    "prisma": "^5.13.0",
+    "react": "^18.2.0",
+    "react-dom": "^18",
+    "react-tailwindcss-datepicker": "^1.6.6",
+    "dayjs": "^1.11.6"
+  },
+  "devDependencies": {
+    "daisyui": "^4.11.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
+  }
+}

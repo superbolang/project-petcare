@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model User{
+  id String @id @default(cuid())
+  name String
+  email String @unique
+  password String
+  role String @default("USER")
+}
+
+model File{
+  id String @unique @default(cuid())
+  key String
+}
+
+model Branch{
+  id String @id @default(cuid())
+  branchName String
+  branchCity String
+  branchAddress String
+  pets String
+}
+
+model Order{
+  id String @id @default(cuid())
+  user_id String
+  branch_id String
+  pet_name String
+  num_pet String
+  pet_type String
+  package String
+  start_date String
+  end_date String
+  special_treatment String?
+  price Int?
+  status String? @default("Waiting")
+  comment String?
+}

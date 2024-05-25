@@ -1,0 +1,33 @@
+### create order
+POST http://localhost:3000/api/v1/order
+
+{
+  "branch_id": "glQXllRzn4mVfWjlbauhy",
+  "user_id": "clwkqhqqn00019brop0rzug85",
+  "pet_name": "Husky",
+  "num_pet": "3",
+  "pet_type": "Cat",
+  "service": "Extra",
+  "start_date": "2024-05-26",
+  "end_date": "2024-05-28",
+  "special_treatment": "Accept me",
+}
+
+### get all order
+GET http://localhost:3000/api/v1/order
+
+### get single order
+GET http://localhost:3000/api/v1/order/zZoQ9o9E8OpoW2xRXeyKo
+
+### delete  order
+DELETE http://localhost:3000/api/v1/order
+
+### patch  order
+PATCH http://localhost:3000/api/v1/branch
+
+{
+  "branchName":"Jakarta 2",
+  "branchCity":"Jakarta Sunda",
+  "branchAddress":"Jalan Pramuka Nomor 1",
+  "pets": "Dog, Cat"
+}

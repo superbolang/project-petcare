@@ -1,0 +1,22 @@
+### register user
+POST http://localhost:3000/api/v1/register
+
+{
+  "name":"Boy Sandra",
+  "email":"boy@email.com",
+  "password":"123456"
+}
+
+### login user
+POST http://localhost:3000/api/v1/login
+
+{
+  "email":"boy@email.com",
+  "password":"123456"
+}
+
+### get all user
+GET http://localhost:3000/api/v1/user
+
+### get single user
+GET http://localhost:3000/api/v1/user/clvyzkw0r0000pgxud3v02gzo
