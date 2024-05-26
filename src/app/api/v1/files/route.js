@@ -1,4 +1,5 @@
 import { prisma } from '@/utils/prisma';
+export const dynamic = 'force-dynamic';
 
 export async function GET() {
   // const allFiles = await prisma.image.findMany();
